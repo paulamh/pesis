@@ -1,0 +1,17 @@
+Main:
+    - starts running Menu(ui)
+Menu:
+    - has a bunch of options to be changed
+    - has launch game trigger
+    - can launch a Game(ui, options),
+    which gives control back to menu only when it exits
+    - has history that shows what previous Game-launches have done
+
+Game:
+    - sets up a new Match(ui, rules, team1, team2) with the given options
+    - runs the Match
+    - stores the result of the match in a file
+Match:
+    - iterates Periods which iterate Turns which iterate Batters which iterates Battings
+    - the rules dictate how many periods, turns per period, fouls per turn, etc.
+    - creates and passes on a MatchStatus(rules), which is regularly checked for the need to e.g. stop the turn
